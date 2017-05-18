@@ -1,0 +1,13 @@
+#
+# container.yml
+#
+version: "2"
+services:
+  azkaban:
+    from: "ubuntu:xenial"
+    ports:
+      - "80:8081"
+    command: ["bin/azkaban-solo-start.sh"]
+    working_dir: "/opt/azkaban/azkaban-solo-server/build/install/azkaban-solo-server"
+    roles:
+      - "azkaban-container"
